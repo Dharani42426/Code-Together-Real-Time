@@ -1,0 +1,205 @@
+.problem-solve-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0d1117;
+  color: #e6edf3;
+  overflow: hidden;
+}
+
+.solve-topbar {
+  height: 48px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.solve-title { font-size: 14px; font-weight: 600; }
+
+.lang-select-solve {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  width: auto;
+}
+
+.solve-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.problem-panel {
+  width: 45%;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #30363d;
+  background: #0d1117;
+}
+
+.example-block {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.example-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b949e;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.example-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #c9d1d9;
+}
+
+.example-content code {
+  background: #21262d;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #79c0ff;
+}
+
+.constraints-block {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.constraints-block ul { padding-left: 16px; }
+.constraints-block li { font-size: 13px; color: #c9d1d9; margin-bottom: 4px; }
+.constraints-block code { font-family: monospace; color: #ffa657; }
+
+.editor-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.solve-editor-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  background: #0d1117;
+}
+
+.solve-line-numbers {
+  padding: 12px 0;
+  background: #0d1117;
+  border-right: 1px solid #21262d;
+  min-width: 44px;
+  text-align: right;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.solve-code-editor {
+  flex: 1;
+  background: #0d1117;
+  color: #e6edf3;
+  border: none;
+  padding: 12px 16px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  overflow-y: auto;
+  tab-size: 2;
+}
+
+.solve-bottom {
+  height: 200px;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.solve-bottom-tabs {
+  display: flex;
+  border-bottom: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.bottom-tab-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+.bottom-tab-btn:hover { color: #e6edf3; }
+.bottom-tab-btn.active { color: #e6edf3; border-bottom-color: #58a6ff; }
+
+.solve-bottom-content { flex: 1; overflow-y: auto; padding: 12px 16px; }
+
+.test-case {
+  background: #21262d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.tc-label { font-size: 11px; font-weight: 600; color: #8b949e; margin-bottom: 6px; }
+.tc-row { display: flex; gap: 8px; align-items: center; margin-bottom: 3px; color: #c9d1d9; }
+.tc-row span { color: #8b949e; min-width: 60px; }
+.tc-row code { font-family: monospace; color: #79c0ff; }
+
+.output-block { font-size: 13px; }
+.output-line { display: flex; align-items: center; gap: 6px; padding: 4px 0; }
+.output-line.pass { color: #3fb950; }
+.running-msg { color: #8b949e; font-style: italic; }
+
+.result-block { padding: 8px 0; }
+.result-accepted {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3fb950;
+  margin-bottom: 16px;
+}
+
+.result-stats {
+  display: flex;
+  gap: 24px;
+}
+.result-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.result-stats span { font-size: 12px; color: #8b949e; }
+.result-stats strong { font-size: 16px; color: #e6edf3; }
+.result-stats small { font-size: 11px; color: #3fb950; }
+
+@media (max-width: 768px) {
+  .solve-body { flex-direction: column; }
+  .problem-panel { width: 100%; height: 40%; border-right: none; border-bottom: 1px solid #30363d; }
+}

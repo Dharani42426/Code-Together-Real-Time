@@ -1,0 +1,91 @@
+.room-form-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.room-form-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px;
+}
+
+.room-form-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.toggle-group { display: flex; gap: 8px; }
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.toggle-btn.active {
+  border-color: var(--accent);
+  background: rgba(88,166,255,0.1);
+  color: var(--accent);
+}
+
+.success-icon { font-size: 48px; text-align: center; margin-bottom: 12px; }
+.room-form-card h2 { text-align: center; }
+
+.room-id-display {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.room-id-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+.room-id-value { font-size: 22px; font-weight: 700; font-family: monospace; color: var(--accent); letter-spacing: 2px; }
+
+.invite-link-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.invite-link-row input { flex: 1; font-size: 12px; }
+
+.created-details {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.created-details span { font-weight: 600; color: var(--text-primary); }
+
+.public-room-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.public-room-item:hover { border-color: var(--accent); }
+
+@media (max-width: 480px) {
+  .room-form-card { padding: 20px; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}

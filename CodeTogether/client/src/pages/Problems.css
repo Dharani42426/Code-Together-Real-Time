@@ -1,0 +1,96 @@
+.problems-page { max-width: 1100px; }
+
+.problems-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.problems-header h1 { font-size: 22px; font-weight: 700; }
+
+.problems-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  flex: 1;
+  min-width: 200px;
+}
+.search-wrap input { background: none; border: none; padding: 0; font-size: 13px; }
+
+.filter-group { display: flex; gap: 4px; }
+
+.filter-btn {
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-btn:hover { color: var(--text-primary); }
+.filter-btn.active { background: rgba(88,166,255,0.12); border-color: var(--accent); color: var(--accent); }
+
+.topic-select {
+  padding: 7px 12px;
+  width: auto;
+  font-size: 13px;
+}
+
+.problems-table { padding: 0; overflow: hidden; }
+
+table { width: 100%; border-collapse: collapse; }
+
+thead tr { border-bottom: 1px solid var(--border); }
+
+th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.problem-row {
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.problem-row:hover { background: var(--bg-tertiary); }
+.problem-row:last-child { border-bottom: none; }
+
+td { padding: 12px 16px; font-size: 14px; }
+
+.problem-num { color: var(--text-muted); font-size: 13px; }
+.problem-title { font-weight: 500; color: var(--text-primary); }
+.problem-title:hover { color: var(--accent); }
+
+.topic-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+  .problems-filters { flex-direction: column; align-items: stretch; }
+  th:nth-child(4), td:nth-child(4),
+  th:nth-child(5), td:nth-child(5) { display: none; }
+}
