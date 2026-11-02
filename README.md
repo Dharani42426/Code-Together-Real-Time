@@ -75,39 +75,57 @@ CodeTogether/
     └── server.js
 ```
 
+
 ## ⚙️ Installation and Setup
 
 ### Prerequisites
 
-- Node.js and npm installed
-- MongoDB running locally, or a MongoDB Atlas connection string
-- Judge0 API credentials if you want to use the external code-execution service
-- Gemini API credentials if you want live AI responses
+Before running CodeTogether, make sure you have the following installed:
 
-### 1. Clone the repository
+- [Node.js](https://nodejs.org/) and npm
+- MongoDB running locally, or a MongoDB Atlas connection string
+- Judge0 API credentials (required for external code execution)
+- Gemini API credentials (required for live AI responses)
+
+### 1. Clone the Repository
+
+Clone the CodeTogether repository using:
 
 ```bash
-git clone https://github.com/Dharani42426/CodeTogether.git
-cd CodeTogether
+git clone https://github.com/Dharani42426/Real-time-coding-together.git
 ```
 
-> If your GitHub repository has a different name, replace `CodeTogether` in the clone URL with the exact repository name.
+Navigate to the project directory:
 
-### 2. Install dependencies
+```bash
+cd Real-time-coding-together
+```
 
-Run this command from the project root:
+### 2. Install Dependencies
+
+Run the following command from the project root directory:
 
 ```bash
 npm run install:all
 ```
 
-### 3. Configure environment variables
+This installs the required dependencies for both the frontend and backend.
 
-Create a file named `.env` inside the `server` folder (`server/.env`). Use the following template and replace the placeholder values with your own configuration:
+### 3. Configure Environment Variables
+
+Create a file named `.env` inside the `server` folder:
+
+```text
+server/.env
+```
+
+Add the following environment variables and replace the placeholder values with your actual configuration:
 
 ```env
 PORT=5000
+
 MONGO_URI=mongodb://127.0.0.1:27017/codetogether
+
 JWT_SECRET=replace_with_a_long_random_secret
 JWT_EXPIRE=7d
 
@@ -121,78 +139,108 @@ GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-pr
 CLIENT_URL=http://localhost:5173
 ```
 
-For MongoDB Atlas, use the connection string supplied by your Atlas cluster as `MONGO_URI`. Judge0 and Gemini credentials can be left as placeholders for local setup; the project contains fallback responses when these integrations are not configured. Actual code execution requires a working Judge0 API configuration.
+**Note:**
 
-**Security:** Never commit `server/.env` or paste real API keys into source code. The repository `.gitignore` excludes environment files. If a real key has already been pushed to a public repository, revoke or rotate it.
+- For MongoDB Atlas, replace the `MONGO_URI` with your Atlas connection string.
+- Judge0 API credentials are required for actual online code execution.
+- Gemini API credentials are required for live AI-powered responses.
+- The application includes fallback responses when the external AI integration is not configured.
 
-### 4. Start the backend
+**Security:** Never upload your actual `.env` file or expose API keys in your source code. The `.gitignore` file excludes environment files from Git tracking.
 
-Open a terminal at the project root and run:
+If any API key has already been exposed publicly, revoke it and generate a new one.
+
+### 4. Start the Backend Server
+
+Open a terminal in the project root directory and execute:
 
 ```bash
 npm run server
 ```
 
-The backend API is available at `http://localhost:5000` when it starts successfully.
+The backend server will run at:
 
-### 5. Start the frontend
+```text
+http://localhost:5000
+```
 
-Open a second terminal at the project root and run:
+### 5. Start the Frontend
+
+Open another terminal in the project root directory and execute:
 
 ```bash
 npm run client
 ```
 
-Vite normally serves the frontend at `http://localhost:5173`.
+The frontend application will run at:
 
-### 6. Open the application
+```text
+http://localhost:5173
+```
 
-Visit `http://localhost:5173` in your browser. Check the backend health endpoint at `http://localhost:5000/api/health` to confirm that the API is responding.
+### 6. Open the Application
+
+Open your browser and visit:
+
+```text
+http://localhost:5173
+```
+
+You can now access the CodeTogether application.
+
+---
 
 ## 🧪 Verify the Installation
 
-After starting both terminals:
+After starting both the frontend and backend, perform the following checks:
 
-1. Confirm the backend terminal reports that the server is running on port `5000` and MongoDB connects successfully.
-2. Open `http://localhost:5000/api/health`. A successful response should include `"success": true` and the message `CodeTogether API is running`.
-3. Open `http://localhost:5173` and confirm that the frontend loads.
-4. Register a test account and sign in.
-5. Create a coding room, open it in another browser window or with another test account, and check whether room updates and chat are synchronized.
-6. Try the AI assistant. Without a Gemini key, the fallback demo responses should be returned; live Gemini responses require valid credentials.
-7. Try code execution only after configuring a working Judge0 API key.
+1. Verify that the backend server starts successfully and connects to MongoDB.
+2. Open `http://localhost:5000/api/health` to check whether the backend API is responding.
+3. Open `http://localhost:5173` and confirm that the frontend application loads successfully.
+4. Register a test account and log in.
+5. Create a coding room and join it using another browser window or test account.
+6. Verify whether code changes, cursor positions, and chat messages are synchronized between participants.
+7. Test the AI assistant. Live AI responses require valid Gemini API credentials.
+8. Test code execution using a working Judge0 API configuration.
 
-To check that the frontend production build compiles, open another terminal at the project root and run:
+### Build the Frontend
+
+To verify that the frontend production build completes successfully, open another terminal and execute:
 
 ```bash
 cd client
 npm run build
 ```
 
-## 📸 Screenshots
-
-Add screenshots of the running application to a `screenshots/` folder and link them here as the project UI is captured. Suggested screenshots:
-
-- Landing page
-- User dashboard
-- Collaborative coding room
-- Integrated chat/video call/whiteboard
-- AI coding assistant
-- Coding practice page
-
-## 🔮 Future Improvements
-
-- Continue improving collaborative editing reliability and conflict handling.
-- Expand supported languages and code-execution options.
-- Enhance AI-assisted learning and debugging workflows.
-- Add more coding challenges and progress insights.
-- Improve accessibility, responsiveness, and automated test coverage.
-
-## 👩‍💻 Developer
-
-**Dharani**  
-GitHub: [@Dharani42426](https://github.com/Dharani42426)
+If the build completes successfully, the frontend has compiled without build errors.
 
 ---
+
+## 📸 Screenshots
+
+Screenshots of the actual application will be added here to demonstrate its interface and functionality.
+
+Create a `screenshots` folder in the project root and add the following screenshots:
+
+### 🏠 Landing Page
+
+![Landing Page](screenshots/home.png)
+
+### 📊 User Dashboard
+
+![User Dashboard](screenshots/dashboard.png)
+
+### 💻 Collaborative Coding Room
+
+![Collaborative Coding Room](screenshots/coding-room.png)
+
+### 🤖 AI Coding Assistant
+
+![AI Coding Assistant](screenshots/ai-assistant.png)
+
+### 🧩 Coding Practice
+
+![Coding Practice](screenshots/problems.png)
 
 If you find this project interesting, consider giving the repository a ⭐ on GitHub!
 
